@@ -16,6 +16,11 @@
 		83647AEF25132CF50053081C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83647AED25132CF50053081C /* LaunchScreen.storyboard */; };
 		83647AFA25132CF50053081C /* D_M_K_G_Dissanayake_COBSCCOMP191P_007Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83647AF925132CF50053081C /* D_M_K_G_Dissanayake_COBSCCOMP191P_007Tests.swift */; };
 		83647B0525132CF50053081C /* D_M_K_G_Dissanayake_COBSCCOMP191P_007UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83647B0425132CF50053081C /* D_M_K_G_Dissanayake_COBSCCOMP191P_007UITests.swift */; };
+		836C73FE2514E88C006C8A95 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C73FD2514E88C006C8A95 /* HomeViewController.swift */; };
+		836C74002514E8A8006C8A95 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C73FF2514E8A8006C8A95 /* LoginViewController.swift */; };
+		836C74022514E8C5006C8A95 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C74012514E8C5006C8A95 /* SettingsViewController.swift */; };
+		836C74042514F44F006C8A95 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C74032514F44F006C8A95 /* RegisterViewController.swift */; };
+		836C74062514F637006C8A95 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C74052514F637006C8A95 /* SignInViewController.swift */; };
 		83A254372513899C00C152AC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A254362513899C00C152AC /* CustomButton.swift */; };
 		83A2543925138DBF00C152AC /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2543825138DBF00C152AC /* CustomView.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +58,11 @@
 		83647B0025132CF50053081C /* D.M.K.G.Dissanayake-COBSCCOMP191P-007UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "D.M.K.G.Dissanayake-COBSCCOMP191P-007UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83647B0425132CF50053081C /* D_M_K_G_Dissanayake_COBSCCOMP191P_007UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_M_K_G_Dissanayake_COBSCCOMP191P_007UITests.swift; sourceTree = "<group>"; };
 		83647B0625132CF50053081C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		836C73FD2514E88C006C8A95 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		836C73FF2514E8A8006C8A95 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		836C74012514E8C5006C8A95 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		836C74032514F44F006C8A95 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		836C74052514F637006C8A95 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		83A254362513899C00C152AC /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		83A2543825138DBF00C152AC /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +115,6 @@
 		83647ADE25132CF30053081C /* D.M.K.G.Dissanayake-COBSCCOMP191P-007 */ = {
 			isa = PBXGroup;
 			children = (
-				83A254352513896700C152AC /* Utils */,
 				83647ADF25132CF30053081C /* AppDelegate.swift */,
 				83647AE125132CF30053081C /* SceneDelegate.swift */,
 				83647B1225132D810053081C /* Controllers */,
@@ -140,6 +149,11 @@
 			isa = PBXGroup;
 			children = (
 				83647AE325132CF30053081C /* ViewController.swift */,
+				836C73FD2514E88C006C8A95 /* HomeViewController.swift */,
+				836C73FF2514E8A8006C8A95 /* LoginViewController.swift */,
+				836C74012514E8C5006C8A95 /* SettingsViewController.swift */,
+				836C74032514F44F006C8A95 /* RegisterViewController.swift */,
+				836C74052514F637006C8A95 /* SignInViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -147,6 +161,7 @@
 		83647B1325132DC60053081C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				83A254352513896700C152AC /* Utils */,
 				83647AE525132CF30053081C /* Main.storyboard */,
 			);
 			path = Views;
@@ -292,12 +307,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				836C74062514F637006C8A95 /* SignInViewController.swift in Sources */,
 				83A254372513899C00C152AC /* CustomButton.swift in Sources */,
+				836C74042514F44F006C8A95 /* RegisterViewController.swift in Sources */,
 				83647AE425132CF30053081C /* ViewController.swift in Sources */,
 				83647AE025132CF30053081C /* AppDelegate.swift in Sources */,
 				83A2543925138DBF00C152AC /* CustomView.swift in Sources */,
+				836C74002514E8A8006C8A95 /* LoginViewController.swift in Sources */,
 				83647AE225132CF30053081C /* SceneDelegate.swift in Sources */,
+				836C73FE2514E88C006C8A95 /* HomeViewController.swift in Sources */,
 				83647AEA25132CF30053081C /* D_M_K_G_Dissanayake_COBSCCOMP191P_007.xcdatamodeld in Sources */,
+				836C74022514E8C5006C8A95 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
