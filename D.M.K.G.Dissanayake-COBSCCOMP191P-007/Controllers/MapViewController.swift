@@ -1,8 +1,8 @@
 //
-//  HomeViewController.swift
+//  MapViewController.swift
 //  D.M.K.G.Dissanayake-COBSCCOMP191P-007
 //
-//  Created by Kalana Dissanayake on 9/18/20.
+//  Created by Kalana Dissanayake on 9/19/20.
 //  Copyright © 2020 Kalana Dissanyake. All rights reserved.
 //
 
@@ -11,14 +11,14 @@ import MapKit
 import Firebase
 import CoreLocation
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate{
+
+    @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     
-    @IBOutlet weak var homeMapView: MKMapView!
-    
     override func viewDidLoad() {
-        
-        
+        super.viewDidLoad()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,21 +44,24 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: coordinate, span: span)
-        homeMapView.setRegion(region, animated: true)
+        mapView.setRegion(region, animated: true)
         let pin = MKPointAnnotation()
         pin.coordinate = coordinate
-        homeMapView.addAnnotation(pin)
+        mapView.addAnnotation(pin)
     }
-
-    override func viewDidAppear(_ animated: Bool){
-        tabBarController?.tabBar.isHidden = false
+    
+    
+    @IBAction func MapBackBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
     */
 
