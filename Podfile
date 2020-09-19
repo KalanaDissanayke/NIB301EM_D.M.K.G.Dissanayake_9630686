@@ -8,6 +8,7 @@ target 'D.M.K.G.Dissanayake-COBSCCOMP191P-007' do
   # Pods for D.M.K.G.Dissanayake-COBSCCOMP191P-007
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
   target 'D.M.K.G.Dissanayake-COBSCCOMP191P-007Tests' do
     inherit! :search_paths

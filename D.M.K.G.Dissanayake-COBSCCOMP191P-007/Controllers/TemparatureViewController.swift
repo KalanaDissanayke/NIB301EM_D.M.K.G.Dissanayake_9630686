@@ -26,6 +26,10 @@ class TemparatureViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool){
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         loadUser()
         
@@ -56,6 +60,7 @@ class TemparatureViewController: UIViewController {
 //                            self.tempLabel.text = "\(temp as? String) C"
                             if let timestamp = lastModified as? Timestamp, let tempC = temp as? String {
                                 self.timeLabel.text = "\(timestamp.dateValue())"
+                        
                                 self.tempLabel.text = "\(tempC) C"
                             }
                         } else {
