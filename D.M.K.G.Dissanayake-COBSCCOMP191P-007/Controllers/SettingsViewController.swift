@@ -11,6 +11,24 @@ import Firebase
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet weak var LogOutBtnRef: CustomButton!
+    
+    @IBOutlet weak var TblView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        TblView.delegate = self
+        TblView.dataSource = self
+        TblView.tableFooterView = UIView()
+    }
+    
+    var settingCells = [
+        "Profile",
+        "Contact Us",
+        "Share with Friend",
+    ]
+    
     override func viewDidAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
     }
@@ -31,6 +49,14 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+        if Auth.auth().currentUser == nil{
+            LogOutBtnRef.isHidden = true
+        }
+        
+    }
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -39,4 +65,25 @@ class SettingsViewController: UIViewController {
     }
     */
 
+}
+
+extension SettingsViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        if indexPath.row == 0 {
+            performSegue(withIdentifier: "Profile", sender: self)
+        }
+    }
+}
+
+extension SettingsViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return settingCells.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCell", for: indexPath)
+        cell.textLabel?.text = settingCells[indexPath.row]
+        return cell
+    }
 }

@@ -43,7 +43,8 @@ class RegisterViewController: UIViewController {
                 "name": self.nameTextField.text!,
                 "address": self.addressTextField.text!,
                 "email": email,
-                "role": "user"
+                "role": "user",
+                "createdAt": Date()
             ]) { err in
                 if let err = err {
                     print("Error adding document: \(err)")
