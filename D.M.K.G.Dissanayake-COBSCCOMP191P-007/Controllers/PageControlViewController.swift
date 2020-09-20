@@ -24,8 +24,8 @@ class PageControlViewController: UIViewController, UIScrollViewDelegate{
     var arrImages : [UIImage] = []
     var arrLabelTitle : [UILabel] = []
     
-    @IBAction func backItem(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func backButton(_ sender: Any) {
+        print("adhsahd")
     }
     
     
