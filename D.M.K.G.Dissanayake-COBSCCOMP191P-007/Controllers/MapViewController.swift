@@ -15,9 +15,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
 
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
+    let db = Firestore.firestore()
+    var userDocRefId = ""
+    var geoPoints: [GeoPoint] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchUsers()
 
     }
     
@@ -37,6 +42,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
             locationManager.stopUpdatingLocation()
             
             render(location)
+            updateLocations(location)
         }
     }
     
@@ -50,6 +56,58 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
         mapView.addAnnotation(pin)
     }
     
+     func updateLocations(_ location: CLLocation) {
+            if let email = Auth.auth().currentUser?.email {
+                db.collection("users").whereField("email", isEqualTo: email).getDocuments { (querySnapshot, error) in
+                    if let e = error {
+                        print(e.localizedDescription)
+                    } else {
+                        if let snapshotDocuments = querySnapshot?.documents {
+                            self.userDocRefId = snapshotDocuments[0].documentID
+                            
+                            self.db.collection("users").document(self.userDocRefId).updateData([
+                                "Location": GeoPoint(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                            ]) { error in
+                                if let e = error {
+                                    print(e)
+                                    return
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        func fetchUsers() {
+            geoPoints = []
+            db.collection("users").addSnapshotListener { (querySnapshot, error) in
+                if let e = error {
+                    print(e.localizedDescription)
+                } else {
+                    
+                    if let snapshotDocuemnts = querySnapshot?.documents {
+                        for doc in snapshotDocuemnts {
+                            let data = doc.data()
+                            if let geopoint = data["Location"] as? GeoPoint {
+                                self.geoPoints.append(geopoint)
+                            }
+                        }
+                        DispatchQueue.main.async {
+                            for i in self.geoPoints{
+                                if let latitude = i.value(forKey: "latitude"), let longitude = i.value(forKey: "longitude") {
+                                    let point = MKPointAnnotation()
+                                    point.coordinate = CLLocationCoordinate2D(latitude: latitude as! CLLocationDegrees, longitude: longitude as! CLLocationDegrees)
+                                    self.mapView.addAnnotation(point)
+                                }
+      
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
     
     @IBAction func MapBackBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

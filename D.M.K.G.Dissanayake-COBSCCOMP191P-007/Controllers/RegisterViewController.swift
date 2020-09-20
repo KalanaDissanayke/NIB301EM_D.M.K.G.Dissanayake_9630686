@@ -50,6 +50,7 @@ class RegisterViewController: UIViewController {
                     print("Error adding document: \(err)")
                 } else {
                     print("Document added with ID")
+                    self.performSegue(withIdentifier: "regToTemp", sender: self)
                 }
             }
         }

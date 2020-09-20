@@ -33,19 +33,19 @@ class SettingsViewController: UIViewController {
         tabBarController?.tabBar.isHidden = true
     }
     
-   
+    
     @IBAction func CloseButtonSetting(_ sender: Any) {
         tabBarController?.selectedIndex = 0
     }
     
     
     @IBAction func LogOutBtn(_ sender: Any) {
-            let firebaseAuth = Auth.auth()
+        let firebaseAuth = Auth.auth()
         do {
-          try firebaseAuth.signOut()
-        tabBarController?.selectedIndex = 0
+            try firebaseAuth.signOut()
+            tabBarController?.selectedIndex = 0
         } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
+            print ("Error signing out: %@", signOutError)
         }
     }
     
@@ -58,13 +58,13 @@ class SettingsViewController: UIViewController {
     }
     
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
 }
 
 extension SettingsViewController: UITableViewDelegate{
@@ -72,11 +72,10 @@ extension SettingsViewController: UITableViewDelegate{
         print(indexPath)
         if indexPath.row == 0 {
             performSegue(withIdentifier: "Profile", sender: self)
+        } else if indexPath.row == 1
+        {
+            performSegue(withIdentifier: "SettingToContact", sender: self)
         }
-        if indexPath.row == 1 {
-            performSegue(withIdentifier: "Contact Us", sender: self)
-        }
-
     }
 }
 

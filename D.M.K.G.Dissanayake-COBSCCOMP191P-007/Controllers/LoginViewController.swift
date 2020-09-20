@@ -10,11 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    
-    
     override func viewDidAppear(_ animated: Bool){
         tabBarController?.tabBar.isHidden = true
-        navigationController?.navigationBar.isHidden = true
+        //navigationController?.navigationBar.isHidden = true
     }
 
     /*
@@ -25,8 +23,9 @@ class LoginViewController: UIViewController {
     }
     */
 
-    
-    @IBAction func CloseButton(_ sender: UIButton) {
+    @IBAction func CloseBtn(_ sender: Any) {
         tabBarController?.selectedIndex = 0
+
     }
+    
 }

@@ -13,6 +13,9 @@ import CoreLocation
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
+    let db = Firestore.firestore()
+    var userDocRefId = ""
+    var geoPoints: [GeoPoint] = []
     
     @IBOutlet weak var homeMapView: MKMapView!
     
@@ -49,7 +52,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         pin.coordinate = coordinate
         homeMapView.addAnnotation(pin)
     }
-
+    
     override func viewDidAppear(_ animated: Bool){
         tabBarController?.tabBar.isHidden = false
     }
