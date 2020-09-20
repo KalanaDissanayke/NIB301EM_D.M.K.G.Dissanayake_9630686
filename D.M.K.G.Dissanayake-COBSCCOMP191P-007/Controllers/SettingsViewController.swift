@@ -73,8 +73,13 @@ extension SettingsViewController: UITableViewDelegate{
         if indexPath.row == 0 {
             performSegue(withIdentifier: "Profile", sender: self)
         }
+        if indexPath.row == 1 {
+            performSegue(withIdentifier: "Contact Us", sender: self)
+        }
+
     }
 }
+
 
 extension SettingsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
