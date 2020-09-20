@@ -30,6 +30,7 @@
 		83E1F90D2515031600CB4E74 /* TemparatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1F90C2515031600CB4E74 /* TemparatureViewController.swift */; };
 		83E1F90F2516219000CB4E74 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1F90E2516219000CB4E74 /* MapViewController.swift */; };
 		83E1F91125164C8700CB4E74 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1F91025164C8700CB4E74 /* UpdateViewController.swift */; };
+		83E1F9132516890900CB4E74 /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1F9122516890800CB4E74 /* PageControlViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		83E1F90C2515031600CB4E74 /* TemparatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemparatureViewController.swift; sourceTree = "<group>"; };
 		83E1F90E2516219000CB4E74 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		83E1F91025164C8700CB4E74 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		83E1F9122516890800CB4E74 /* PageControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlViewController.swift; sourceTree = "<group>"; };
 		B80F86810C2435E3F4F07E42 /* Pods-D.M.K.G.Dissanayake-COBSCCOMP191P-007-D.M.K.G.Dissanayake-COBSCCOMP191P-007UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-D.M.K.G.Dissanayake-COBSCCOMP191P-007-D.M.K.G.Dissanayake-COBSCCOMP191P-007UITests.debug.xcconfig"; path = "Target Support Files/Pods-D.M.K.G.Dissanayake-COBSCCOMP191P-007-D.M.K.G.Dissanayake-COBSCCOMP191P-007UITests/Pods-D.M.K.G.Dissanayake-COBSCCOMP191P-007-D.M.K.G.Dissanayake-COBSCCOMP191P-007UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5D501491315B302D2EFE6D1 /* Pods-D.M.K.G.Dissanayake-COBSCCOMP191P-007Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-D.M.K.G.Dissanayake-COBSCCOMP191P-007Tests.release.xcconfig"; path = "Target Support Files/Pods-D.M.K.G.Dissanayake-COBSCCOMP191P-007Tests/Pods-D.M.K.G.Dissanayake-COBSCCOMP191P-007Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E4FEF93F1F596D719D22402B /* Pods_D_M_K_G_Dissanayake_COBSCCOMP191P_007Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_D_M_K_G_Dissanayake_COBSCCOMP191P_007Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +198,7 @@
 				83E1F90C2515031600CB4E74 /* TemparatureViewController.swift */,
 				83E1F90E2516219000CB4E74 /* MapViewController.swift */,
 				83E1F91025164C8700CB4E74 /* UpdateViewController.swift */,
+				83E1F9122516890800CB4E74 /* PageControlViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				836C74002514E8A8006C8A95 /* LoginViewController.swift in Sources */,
 				83647AE225132CF30053081C /* SceneDelegate.swift in Sources */,
 				836C73FE2514E88C006C8A95 /* HomeViewController.swift in Sources */,
+				83E1F9132516890900CB4E74 /* PageControlViewController.swift in Sources */,
 				83647AEA25132CF30053081C /* D_M_K_G_Dissanayake_COBSCCOMP191P_007.xcdatamodeld in Sources */,
 				836C74022514E8C5006C8A95 /* SettingsViewController.swift in Sources */,
 			);
