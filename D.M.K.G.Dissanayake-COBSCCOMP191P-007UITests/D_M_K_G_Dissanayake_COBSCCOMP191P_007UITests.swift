@@ -23,13 +23,32 @@ class D_M_K_G_Dissanayake_COBSCCOMP191P_007UITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testSignin() throws {
+        let useremail = "admin@gmail.com"
+        let userpassword = "123456"
+        
         let app = XCUIApplication()
-        app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        app.tabBars.buttons["Update"].tap()
+        app/*@START_MENU_TOKEN@*/.staticTexts["Sign In"]/*[[".buttons[\"Sign In\"].staticTexts[\"Sign In\"]",".staticTexts[\"Sign In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let email = app.textFields["Email"]
+        email.tap()
+        email.typeText(useremail)
+        
+        let password = app.secureTextFields["Password"]
+        password.tap()
+        password.typeText(userpassword)
+        
+        app.buttons["Sign in"].tap()
+        
+        let updateTextField = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element
+        
+        let isThere = updateTextField.waitForExistence(timeout: 10)
+        if isThere {
+            XCTAssertTrue(updateTextField.exists)
+        }
+        
+        
     }
 
     func testLaunchPerformance() throws {
